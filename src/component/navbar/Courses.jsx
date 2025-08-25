@@ -12,7 +12,7 @@ function Courses() {
       { name: "LAW", icon: "📜" },
       { name: "CUET", icon: "🎓" },
       { name: "UGC NET", icon: "🏛️" },
-      { name: "GMAT", icon: "📘" },], // agar right side blank rakhna hai
+      { name: "GMAT", icon: "📘" },],
   },
   {
     title: "Only IAS",
