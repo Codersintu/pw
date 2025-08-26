@@ -13,17 +13,18 @@ function Slide() {
     const images=[img1,img2,img3,img4,img5,img6,img7,img8];
     const [currentidx,setcurrentidx]=useState(0)
     const [activeIndex,setActiveIndex]=useState(null)
+    
     useEffect(()=>{
      const interval=setInterval(()=>{
-      setcurrentidx((prev)=>prev === images.length ? 0 : prev +1)
+      setcurrentidx((prev)=>prev === images.length - 1 ? 0 : prev +1)
      },4000)
      return ()=>clearInterval(interval)
     },[images.length])
 
   return (
-     <div onMouseLeave={()=>setActiveIndex(null)}  className="relative flex justify-center items-center cursor-pointer">
+     <div onMouseLeave={()=>setActiveIndex(null)}  className="relative overflow-x-hidden flex justify-center items-center cursor-pointer">
         
-         <div onClick={()=>setcurrentidx((prev)=> prev === 0 ? images.length - 1:prev -1)} className={`absolute left-0  z-10 cursor-pointer ${activeIndex !== null ? "block" : "hidden"}`}>
+         <div onClick={()=>setcurrentidx((prev)=> prev === 0 ? images.length - 1:prev -1)} className={`absolute left-0  z-10 cursor-pointer ${activeIndex !== null ? "block" : "hidden"} ${activeIndex !== null ? "bg-gray-400" : "hidden"}`}>
             <img src={leftarr} alt="" />
          </div>
          <div  className="flex relative z-0 transition-transform duration-1000" style={{
@@ -35,7 +36,7 @@ function Slide() {
         </div>
 
          
-         <div  onClick={()=>setcurrentidx((prev)=> prev === images.length ? 0:prev + 1)} className={`absolute right-0 z-10 cursor-pointer ${activeIndex !== null ? 'block':"hidden"}`}>
+         <div  onClick={()=>setcurrentidx((prev)=> prev === images.length - 1 ? 0:prev + 1)} className={`absolute right-0 z-10 cursor-pointer ${activeIndex !== null ? 'block':"hidden"} ${activeIndex !== null ? "bg-gray-400" : "hidden"}`}>
             <img src={rightarr} alt="" />
          </div>
 
