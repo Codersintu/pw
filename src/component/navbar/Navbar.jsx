@@ -5,7 +5,7 @@ import Courses from './Courses'
 
 function Navbar() {
   return (
-    <div className='h-[80px] z-10 flex justify-center shadow-2xs border-b border-gray-300'>
+    <div className='h-[80px] z-[999] top-0 bg-white sticky flex justify-center shadow-2xs border-b border-gray-300'>
         <div className="max-w-[1300px] h-[100%]  flex justify-around items-center gap-10">
             {/* left side */}
             <div className="flex justify-center items-center gap-10">
