@@ -6,9 +6,11 @@ import img2 from "../../assets/2nd.jpg"
 import img3 from "../../assets/3rd.webp"
 import img4 from "../../assets/4th.jpg"
 import img5 from "../../assets/5th.jpg"
-
+import img6 from "../../assets/6th.jpg"
+import img7 from "../../assets/7th.webp"
+import img8 from "../../assets/8th.png"
 function Slide() {
-    const images=[img1,img2,img3,img4,img5];
+    const images=[img1,img2,img3,img4,img5,img6,img7,img8];
     const [currentidx,setcurrentidx]=useState(0)
     useEffect(()=>{
      const interval=setInterval(()=>{
@@ -35,7 +37,15 @@ function Slide() {
          <div onClick={()=>setcurrentidx((prev)=> prev === images.length ? 0:prev + 1)} className="absolute right-0 z-10 cursor-pointer">
             <img src={rightarr} alt="" />
          </div>
+
+         {/* circle dot */}
          
+      <div className="absolute w-full flex justify-center items-center bottom-3 gap-3">
+         {images.map((_,idx)=>(
+              <button key={idx} onClick={()=>setcurrentidx(idx)} className={`w-3 h-3 cursor-pointer rounded-full ${currentidx === idx ? "bg-blue-700" : "bg-gray-300"}`}></button>
+         ))}
+        
+      </div>
      </div>
   )
 }
