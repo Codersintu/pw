@@ -12,6 +12,7 @@ import img8 from "../../assets/8th.png"
 function Slide() {
     const images=[img1,img2,img3,img4,img5,img6,img7,img8];
     const [currentidx,setcurrentidx]=useState(0)
+    const [activeIndex,setActiveIndex]=useState(null)
     useEffect(()=>{
      const interval=setInterval(()=>{
       setcurrentidx((prev)=>prev === images.length ? 0 : prev +1)
@@ -20,21 +21,21 @@ function Slide() {
     },[images.length])
 
   return (
-     <div className="relative flex justify-center items-center cursor-pointer">
+     <div onMouseLeave={()=>setActiveIndex(null)}  className="relative flex justify-center items-center cursor-pointer">
         
-         <div onClick={()=>setcurrentidx((prev)=> prev === 0 ? images.length - 1:prev -1)} className="absolute left-0  z-10 cursor-pointer">
+         <div onClick={()=>setcurrentidx((prev)=> prev === 0 ? images.length - 1:prev -1)} className={`absolute left-0  z-10 cursor-pointer ${activeIndex !== null ? "block" : "hidden"}`}>
             <img src={leftarr} alt="" />
          </div>
          <div  className="flex relative z-0 transition-transform duration-1000" style={{
           transform: `translateX(-${currentidx * 100}%)`,
         }}>
          {images.map((img,idx)=>(  
-            <img key={idx} src={img} alt="" />
+            <img key={idx} onMouseEnter={()=>setActiveIndex(idx)} src={img} alt="" />
          ))}
         </div>
 
          
-         <div onClick={()=>setcurrentidx((prev)=> prev === images.length ? 0:prev + 1)} className="absolute right-0 z-10 cursor-pointer">
+         <div  onClick={()=>setcurrentidx((prev)=> prev === images.length ? 0:prev + 1)} className={`absolute right-0 z-10 cursor-pointer ${activeIndex !== null ? 'block':"hidden"}`}>
             <img src={rightarr} alt="" />
          </div>
 
