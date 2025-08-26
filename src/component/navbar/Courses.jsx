@@ -6,7 +6,7 @@ function Courses() {
   const [activeIndex,setActiveIndex]=useState(null)
   
   return (
-    <div onMouseLeave={() => setActiveIndex(null)}  className="absolute left-0 top-full hidden w-[1100px] bg-white shadow-lg border border-gray-200 group-hover:block">
+    <div onMouseLeave={() => setActiveIndex(null)}  className="z-10 absolute left-0 top-full hidden w-[1100px] bg-white shadow-lg border border-gray-200 group-hover:block">
          <div className="flex w-[1100px] ">
           {/* left side */}
             <div className="flex-2 flex flex-col shadow-2xs mx-3">
