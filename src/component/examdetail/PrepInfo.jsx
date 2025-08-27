@@ -28,7 +28,7 @@ const detail = [
 ];
 function PrepInfo() {
   return (
-    <div className="w-[1200px] absolute bg-white h-[200px] shadow-2xl flex justify-center items-center -bottom-48 rounded-md">
+    <div className="w-[1200px] absolute bg-white h-[200px] shadow-2xl flex justify-center items-center -bottom-52 rounded-md">
       <div className="flex justify-around w-[1200px]">
         {detail.map((d, idx) => (
           <>
