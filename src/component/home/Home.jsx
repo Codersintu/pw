@@ -4,7 +4,7 @@ import Homedetail from "./Homedetail";
 
 function Home() {
   return (
-    <div className="h-[calc(100vh - 80px)] w-[100vw]  z-0">
+    <div className="h-[calc(100vh - 80px)] relative w-[100vw]">
       <Slide />
       <Homedetail />
     </div>

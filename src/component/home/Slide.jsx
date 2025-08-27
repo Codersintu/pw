@@ -24,7 +24,7 @@ function Slide() {
   return (
     <div
       onMouseLeave={() => setActiveIndex(null)}
-      className="relative overflow-x-hidden flex justify-center items-center cursor-pointer"
+      className="relative overflow-hidden max-w-[100%] z-0 flex justify-center items-center cursor-pointer"
     >
       <div
         onClick={() =>
@@ -37,7 +37,7 @@ function Slide() {
         <img src={leftarr} alt="" />
       </div>
       <div
-        className="flex relative z-0 transition-transform duration-1000"
+        className="flex max-w-[100%] relative z-0 transition-transform duration-1000"
         style={{
           transform: `translateX(-${currentidx * 100}%)`,
         }}
@@ -48,6 +48,7 @@ function Slide() {
             onMouseEnter={() => setActiveIndex(idx)}
             src={img}
             alt=""
+            className="max-w-[100%]"
           />
         ))}
       </div>
