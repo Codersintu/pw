@@ -12,13 +12,8 @@ function ExamInfo() {
             find the one you are preparing for
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="">
           <Card/>
-           <Card/>
-            <Card/>
-             <Card/>
-              <Card/>
-               <Card/>
         </div>
       </div>
     </div>

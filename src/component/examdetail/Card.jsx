@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import arrow from "../../assets/arrow.png";
 import reect from "../../assets/react.webp";
-import { animate, motion } from "framer-motion"
+import {  motion } from "framer-motion"
+import bank from "../../assets/bank.webp"
+import hand from "../../assets/hand.webp"
+import hand2 from "../../assets/hand2.webp"
+
+
 const cardVariants = {
   hidden: { y: 150, opacity: 0 }, // left side se hidden
   visible: {
@@ -11,30 +16,70 @@ const cardVariants = {
   }
 };
 
+const exams = [
+  {
+    title: "NEET",
+    bg: "bg-pink-100",
+    image: "reect",
+    tags: ["class 11", "class 12", "Dropper"],
+  },
+  {
+    title: "IIT JEE",
+    bg: "bg-yellow-100",
+    image: "bank",
+    tags: ["class 11", "class 12", "Dropper"],
+  },
+  {
+    title: "School Preparation",
+    bg: "bg-orange-100",
+    image: "reect",
+    tags: ["class 6", "class 7", "class 8", "More"],
+  },
+  {
+    title: "UPSC",
+    bg: "bg-blue-100",
+    image: "hand",
+    tags: [],
+  },
+  {
+    title: "Govt Job Exams",
+    bg: "bg-purple-100",
+    image: "hand2",
+    tags: ["SSC", "Banking", "Teaching", "Judiciary"],
+  },
+  {
+    title: "Defence",
+    bg: "bg-cyan-100",
+    image: "reect",
+    tags: ["NDA", "CDS", "AFCAT", "Agniveer"],
+  },
+];
+
+
 function Card() {
-  const [activeidx, setActiveidx] = useState(false);
+  const [activeidx, setActiveidx] = useState(null);
   return (
      <React.Fragment>
     <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
-      onMouseEnter={() => setActiveidx(true)}
-      onMouseLeave={() => setActiveidx(false)}
-      className={`${activeidx == true ? "border" : null}`}
+      onMouseLeave={() => setActiveidx(null)}
+      className="grid grid-cols-3 gap-5"
     >
-      <div class="w-[400px] items-stretch flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    
+      {exams.map((e,idx)=>(
+        <div key={idx}  onMouseEnter={() => setActiveidx(idx)} className="w-[400px] hover:border items-stretch flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
         <div className="flex-2 p-5">
           <div className="flex flex-col gap-10">
-            <h1 className="text-2xl font-bold">NEET</h1>
-            <div className="grid grid-cols-2 gap-4">
-              <button className="border py-2 cursor-pointer rounded-4xl border-gray-400 gap-2">
-                class 11
+            <h1 className="text-2xl font-bold">{e.title}</h1>
+             {e.tags.length > 0 && (
+              <div className="grid grid-cols-2 gap-4">
+                {e.tags.map((tag,i)=>(
+              <button key={i} className="border py-2 cursor-pointer rounded-4xl border-gray-400 gap-2">
+                {tag}
               </button>
-              <button className="border py-2 cursor-pointer rounded-4xl border-gray-400">
-                class 12
-              </button>
-              <button className="border py-2 cursor-pointer rounded-4xl border-gray-400">
-                Dropper
-              </button>
+              ))}
             </div>
+             )}
+
             <div className="flex items-center gap-10">
               <h1 className="text-[20px] text-gray-700">Explore Category</h1>
               <div className="bg-gray-200 rounded-4xl p-1 cursor-pointer">
@@ -47,7 +92,7 @@ function Card() {
           <div className="">
             <img
               className={`${
-                activeidx === true ? "w-[120px]" : "w-[80px]"
+                activeidx !== null ? "w-[120px]" : "w-[80px]"
               } transition-all duration-300`}
               src={reect}
               alt=""
@@ -55,6 +100,8 @@ function Card() {
           </div>
         </div>
       </div>
+      ))}
+      
     </motion.div>
     </React.Fragment>
   );
