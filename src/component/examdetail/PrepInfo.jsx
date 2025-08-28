@@ -27,17 +27,25 @@ const detail = [
   },
 ];
 
-const awardVariants = {
-  initial: {
-    x: -100,
-    opacity: 0,
+// Parent variants (stagger control)
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2, // ek ek karke 0.2s delay
+    },
   },
-  animate: {
-    x: 0,
+};
+
+// Child variants (slide from bottom)
+const awardVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
     opacity: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 0.2,
+      duration: 0.6,
+      ease: "easeOut",
     },
   },
 };
@@ -49,9 +57,9 @@ function PrepInfo() {
         {detail.map((d, idx) => (
           <React.Fragment key={idx}>
             <motion.div
-              variants={awardVariants}
-              initial="initial"
-              whileInView="animate"   // 👈 animation triggers on scroll
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"   // 👈 animation triggers on scroll
               viewport={{ once: true, amount: 0.3 }} // 30% visible, run once
               className="flex flex-col items-center gap-2.5"
             >

@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import arrow from "../../assets/arrow.png";
 import reect from "../../assets/react.webp";
+import { animate, motion } from "framer-motion"
+const cardVariants = {
+  hidden: { y: 150, opacity: 0 }, // left side se hidden
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
+};
 
 function Card() {
   const [activeidx, setActiveidx] = useState(false);
   return (
-    <div
+     <React.Fragment>
+    <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
       onMouseEnter={() => setActiveidx(true)}
       onMouseLeave={() => setActiveidx(false)}
       className={`${activeidx == true ? "border" : null}`}
@@ -45,7 +55,8 @@ function Card() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
+    </React.Fragment>
   );
 }
 
