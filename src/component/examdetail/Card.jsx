@@ -20,37 +20,37 @@ const exams = [
   {
     title: "NEET",
     bg: "bg-pink-100",
-    image: "reect",
+    image: reect,
     tags: ["class 11", "class 12", "Dropper"],
   },
   {
     title: "IIT JEE",
     bg: "bg-yellow-100",
-    image: "bank",
+    image: bank,
     tags: ["class 11", "class 12", "Dropper"],
   },
   {
     title: "School Preparation",
     bg: "bg-orange-100",
-    image: "reect",
+    image: reect,
     tags: ["class 6", "class 7", "class 8", "More"],
   },
   {
     title: "UPSC",
     bg: "bg-blue-100",
-    image: "hand",
+    image: hand,
     tags: [],
   },
   {
     title: "Govt Job Exams",
     bg: "bg-purple-100",
-    image: "hand2",
+    image: hand2,
     tags: ["SSC", "Banking", "Teaching", "Judiciary"],
   },
   {
     title: "Defence",
     bg: "bg-cyan-100",
-    image: "reect",
+    image: reect,
     tags: ["NDA", "CDS", "AFCAT", "Agniveer"],
   },
 ];
@@ -66,7 +66,7 @@ function Card() {
     >
     
       {exams.map((e,idx)=>(
-        <div key={idx}  onMouseEnter={() => setActiveidx(idx)} className="w-[400px] hover:border items-stretch flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div key={idx}  onMouseEnter={() => setActiveidx(idx)} className="w-[400px] hover:border-black items-stretch flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
         <div className="flex-2 p-5">
           <div className="flex flex-col gap-10">
             <h1 className="text-2xl font-bold">{e.title}</h1>
@@ -88,17 +88,19 @@ function Card() {
             </div>
           </div>
         </div>
-        <div className="flex-1 bg-pink-200 rounded-l-full flex justify-center items-center">
-          <div className="">
+       
+         <div className="flex-1 bg-pink-200 rounded-l-full flex justify-center items-center">
+           <div key={idx} className="">
             <img
               className={`${
-                activeidx !== null ? "w-[120px]" : "w-[80px]"
+                activeidx === idx ? "w-[120px]" : "w-[80px]"
               } transition-all duration-300`}
-              src={reect}
+              src={e.image}
               alt=""
             />
-          </div>
+             </div>
         </div>
+          
       </div>
       ))}
       
