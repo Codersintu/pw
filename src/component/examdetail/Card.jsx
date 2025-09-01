@@ -101,7 +101,7 @@ function Card() {
 
             <div className="flex-1 bg-pink-200 rounded-l-full flex justify-center items-center">
               <div key={idx} className="">
-                <motion.img animate={{rotate:360}}  whileHover={{
+                <motion.img  whileHover={{
                 scale: 2.1,
                  transition: { duration: 0.2 }
                    }}
