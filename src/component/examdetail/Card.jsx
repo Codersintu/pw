@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import arrow from "../../assets/arrow.png";
-import reect from "../../assets/react.webp";
 import { motion } from "framer-motion";
-import bank from "../../assets/bank.webp";
-import hand from "../../assets/hand.webp";
-import hand2 from "../../assets/hand2.webp";
+import { exams } from "../../data";
 
 const cardVariants = {
   initial: { y: 100 }, // left side se hidden
@@ -15,58 +12,25 @@ const cardVariants = {
   },
 };
 
-const exams = [
-  {
-    title: "NEET",
-    bg: "bg-pink-100",
-    image: reect,
-    tags: ["class 11", "class 12", "Dropper"],
-  },
-  {
-    title: "IIT JEE",
-    bg: "bg-yellow-100",
-    image: bank,
-    tags: ["class 11", "class 12", "Dropper"],
-  },
-  {
-    title: "School Preparation",
-    bg: "bg-orange-100",
-    image: reect,
-    tags: ["class 6", "class 7", "class 8", "More"],
-  },
-  {
-    title: "UPSC",
-    bg: "bg-blue-100",
-    image: hand,
-    tags: [],
-  },
-  {
-    title: "Govt Job Exams",
-    bg: "bg-purple-100",
-    image: hand2,
-    tags: ["SSC", "Banking", "Teaching", "Judiciary"],
-  },
-  {
-    title: "Defence",
-    bg: "bg-cyan-100",
-    image: reect,
-    tags: ["NDA", "CDS", "AFCAT", "Agniveer"],
-  },
-];
+
 
 function Card() {
   const [activeidx, setActiveidx] = useState(null);
+ const [showAll, setShowAll] = useState(false);
+ const visibleExams = showAll ? exams : exams.slice(0, 6);
+
   return (
     <React.Fragment>
+      <div className="flex flex-col items-center">
       <motion.div
         variants={cardVariants}
         initial="initial"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         onMouseLeave={() => setActiveidx(null)}
-        className="grid grid-cols-3 gap-5"
+        className="grid grid-cols-3 gap-5 "
       >
-        {exams.map((e, idx) => (
+        {visibleExams.map((e, idx) => (
           <div
             key={idx}
             onMouseEnter={() => setActiveidx(idx)}
@@ -92,7 +56,7 @@ function Card() {
                   <h1 className="text-[20px] text-gray-700">
                     Explore Category
                   </h1>
-                  <div className="bg-gray-200 rounded-4xl p-1 cursor-pointer">
+                  <div className="bg-gray-200 hover:bg-blue-600 rounded-4xl p-1 cursor-pointer">
                     <img className="w-[30px]" src={arrow} alt="" />
                   </div>
                 </div>
@@ -115,7 +79,17 @@ function Card() {
             </div>
           </div>
         ))}
+        
       </motion.div>
+      <div className="mt-10">
+        {!showAll ? (
+           <button onClick={()=>setShowAll(true)} className="text-blue-600  cursor-pointer text-2xl font-semibold border-b border-dotted border-purple-600 hover:text-purple-800">View All Categories({exams.length})</button>
+        ):(
+           <button onClick={()=>setShowAll(false)} className="text-blue-600  cursor-pointer text-2xl font-semibold border-b border-dotted border-purple-600 hover:text-purple-800">Show less...</button>
+        )}
+         
+          </div>
+      </div>
     </React.Fragment>
   );
 }

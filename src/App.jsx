@@ -3,13 +3,13 @@ import './App.css'
 import Navbar from './component/navbar/Navbar'
 import Home from './component/home/Home'
 import Exam from './component/examdetail/Exam'
-import ExamInfo from './component/examdetail/ExamInfo'
 import {motion,useScroll} from "motion/react"
+import Main from './Centerplace/Main'
 function App() {
  const {scrollYProgress}=useScroll()
 
   return (
-    <>
+    <div>
       <motion.div  style={{
                     scaleX: scrollYProgress,
                     position: "fixed",
@@ -24,7 +24,8 @@ function App() {
       <Navbar/>
       <Home/>
       <Exam/>
-    </>
+      <Main/>
+    </div>
   )
 }
 

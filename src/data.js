@@ -1,3 +1,8 @@
+import reect from "./assets/react.webp";
+import bank from "./assets/bank.webp";
+import hand from "./assets/hand.webp";
+import hand2 from "./assets/hand2.webp";
+
 export const courses = [
    {
     title: "Competitive Exams",
@@ -120,3 +125,165 @@ export const courses = [
   },
  
 ];
+
+
+// data about card
+ export const exams = [
+  {
+    title: "NEET",
+    bg: "bg-pink-100",
+    image: reect,
+    tags: ["class 11", "class 12", "Dropper"],
+  },
+  {
+    title: "IIT JEE",
+    bg: "bg-yellow-100",
+    image: bank,
+    tags: ["class 11", "class 12", "Dropper"],
+  },
+  {
+    title: "School Preparation",
+    bg: "bg-orange-100",
+    image: reect,
+    tags: ["class 6", "class 7", "class 8", "More"],
+  },
+  {
+    title: "UPSC",
+    bg: "bg-blue-100",
+    image: hand,
+    tags: [],
+  },
+  {
+    title: "Govt Job Exams",
+    bg: "bg-purple-100",
+    image: hand2,
+    tags: ["SSC", "Banking", "Teaching", "Judiciary"],
+  },
+  {
+    title: "Defence",
+    bg: "bg-cyan-100",
+    image: reect,
+    tags: ["NDA", "CDS", "AFCAT", "Agniveer"],
+  },
+  {
+    title: "CA Foundation",
+    bg: "bg-pink-100",
+    image: reect,
+    tags: [],
+  },
+  {
+    title: "Intermediate",
+    bg: "bg-yellow-100",
+    image: bank,
+    tags: [],
+  },
+  {
+    title: "Olympiad",
+    bg: "bg-green-100",
+    image: hand,
+    tags: [],
+  },
+  {
+    title: "MBA",
+    bg: "bg-blue-100",
+    image: hand2,
+    tags: [],
+  },
+  {
+    title: "State PSC",
+    bg: "bg-purple-100",
+    image: reect,
+    tags: [],
+  },
+  {
+    title: "Commerce",
+    bg: "bg-orange-100",
+    image: bank,
+    tags: [],
+  },
+  {
+    title: "GATE",
+    bg: "bg-indigo-100",
+    image: hand,
+    tags: [],
+  },
+  {
+    title: "CUET",
+    bg: "bg-red-100",
+    image: hand2,
+    tags: [],
+  },
+  {
+    title: "AE/JE",
+    bg: "bg-cyan-100",
+    image: reect,
+    tags: [],
+  },
+  {
+    title: "IIT JAM & CSIR NET",
+    bg: "bg-emerald-100",
+    image: bank,
+    tags: [],
+  },
+  {
+    title: "LAW",
+    bg: "bg-teal-100",
+    image: hand,
+    tags: [],
+  },
+  {
+    title: "ESE GATE",
+    bg: "bg-fuchsia-100",
+    image: hand2,
+    tags: [],
+  },
+  {
+    title: "IPMAT",
+    bg: "bg-sky-100",
+    image: reect,
+    tags: [],
+  },
+  {
+    title: "IELTS",
+    bg: "bg-lime-100",
+    image: bank,
+    tags: [],
+  },
+];
+
+
+// center cities
+ export const cities = [
+  {
+    title: "New Delhi",
+    image: reect,
+  },
+  {
+    title: "New Delhi",
+    image: reect,
+  },
+  {
+    title: "New Delhi",
+    image: reect,
+  },
+{
+    title: "New Delhi",
+    image: reect,
+  },
+  {
+    title: "New Delhi",
+    image: reect,
+  },
+  {
+    title: "New Delhi",
+    image: reect,
+  },
+  {
+    title: "Kolkata",
+    image: reect,
+  },
+  {
+    title: "New Delhi",
+    image: reect,
+  },
+]

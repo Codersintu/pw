@@ -2,6 +2,7 @@ import React from "react";
 import heroimg from "../../assets/hero.webp";
 import { motion } from "motion/react";
 
+
 function Homedetail() {
   return (
     <div className="bg-gradient-to-b from-violet-200 to-pink-200  flex justify-center">
