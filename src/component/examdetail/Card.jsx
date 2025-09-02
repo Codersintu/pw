@@ -7,11 +7,11 @@ import hand from "../../assets/hand.webp";
 import hand2 from "../../assets/hand2.webp";
 
 const cardVariants = {
-  hidden: { y: 150, opacity: 0 }, // left side se hidden
+  initial: { y: 100 }, // left side se hidden
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -60,7 +60,7 @@ function Card() {
     <React.Fragment>
       <motion.div
         variants={cardVariants}
-        initial="hidden"
+        initial="initial"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         onMouseLeave={() => setActiveidx(null)}

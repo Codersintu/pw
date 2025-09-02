@@ -7,7 +7,7 @@ function Homedetail() {
     <div className="bg-gradient-to-b from-violet-200 to-pink-200  flex justify-center">
       <div className="flex items-center max-w-[1200px]">
         <div className="flex-1">
-          <div className="flex flex-col gap-2">
+          <div  className="flex flex-col gap-2">
             <h1 className="text-4xl font-semibold">
               Bharat's{" "}
               <span className="text-blue-600">
@@ -21,9 +21,11 @@ function Homedetail() {
             </p>
           </div>
           <motion.button
-            initial={{ scale: 1 }}
+            initial={{ y: 50 }}
+            animate={{ y: 0 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            // transition={{duration:0.4}}
             className="relative mt-10 py-4 px-20 font-semibold text-white rounded-md cursor-pointer overflow-hidden"
           >
             {/* Animated border using motion.div */}
