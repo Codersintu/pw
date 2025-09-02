@@ -2,7 +2,7 @@ import React from "react";
 import pwimg from "../../assets/pw.png";
 import downarr from "../../assets/down.png";
 import Courses from "./Courses";
-
+import { motion } from "motion/react";
 function Navbar() {
   return (
     <div className="h-[80px] z-[999] top-0 bg-white sticky flex justify-center shadow-2xs border-b border-gray-300">
@@ -51,8 +51,13 @@ function Navbar() {
           </ul>
         </div>
         {/* right div */}
-        <div className="bg-blue-800 py-3 px-8 rounded-sm cursor-pointer hover:bg-blue-600">
-          <button className="font-bold text-white">Login/Register</button>
+        <div className="">
+          <motion.button initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+           className="font-bold text-white bg-blue-800 py-3 px-8 rounded-sm cursor-pointer hover:bg-blue-600">
+            Login/Register
+            </motion.button>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import heroimg from "../../assets/hero.webp";
+import { motion } from "motion/react";
 
 function Homedetail() {
   return (
@@ -19,9 +20,32 @@ function Homedetail() {
               The most affordable learning solution
             </p>
           </div>
-          <button className="bg-blue-500 mt-10 py-4 px-20 text-white font-semibold rounded-md">
-            Get Started
-          </button>
+          <motion.button
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative mt-10 py-4 px-20 font-semibold text-white rounded-md cursor-pointer overflow-hidden"
+          >
+            {/* Animated border using motion.div */}
+            <motion.div
+              className="absolute inset-0 rounded-md border-2 border-transparent"
+              style={{
+                background: "linear-gradient(90deg, #3b82f6, #ec4899, #8b5cf6)",
+                backgroundSize: "300% 100%",
+              }}
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+
+            {/* Button inner */}
+            <span className="relative z-10">Get Started</span>
+          </motion.button>
         </div>
         <div className="flex-1">
           <img src={heroimg} alt="" />
