@@ -52,8 +52,8 @@ const awardVariants = {
 
 function PrepInfo() {
   return (
-    <div className="w-[1200px] absolute bg-white h-[200px] shadow-2xl flex justify-center items-center -bottom-48  rounded-md">
-      <div className="flex justify-around w-[1200px]">
+    <div className="w-full max-w-[1200px] absolute bg-white p-10 shadow-2xl flex justify-center items-center -bottom-48  rounded-md">
+      <div className="flex flex-col justify-around lg:flex-row lg:justify-around w-full max-w-[1200px]">
         {detail.map((d, idx) => (
           <React.Fragment key={idx}>
             <motion.div

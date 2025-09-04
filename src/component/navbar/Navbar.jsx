@@ -5,15 +5,15 @@ import Courses from "./Courses";
 import { motion } from "motion/react";
 function Navbar() {
   return (
-    <div className="h-[80px] z-[999] top-0 bg-white sticky flex justify-center shadow-2xs border-b border-gray-300">
+    <div className="h-[80px] w-[100vw] z-[999] top-0 bg-white sticky flex justify-center shadow-2xs border-b border-gray-300">
       <div className="max-w-[1300px] h-[100%]  flex justify-around items-center gap-10">
         {/* left side */}
         <div className="flex justify-center items-center gap-10">
           <div className="w-[50px] cursor-pointer">
-            <img className="w-[100%] " src={pwimg} alt="" />
+            <img className="w-[100%] object-cover max-w-[100%]" src={pwimg} alt="" />
           </div>
 
-          <div className="relative group">
+          <div className="relative group hidden lg:flex">
             <div className="flex justify-center items-center gap-2.5 py-2.5 px-5 border border-blue-800 cursor-pointer rounded-sm">
               <h1 className="text-xl text-blue-800 font-medium">All courses</h1>
               <img
@@ -28,7 +28,7 @@ function Navbar() {
         </div>
 
         {/* center div */}
-        <div className="h-[100%]">
+        <div className="h-[100%] hidden lg:flex">
           <ul className="flex h-full gap-8">
             <li className="font-semibold h-full flex  items-center cursor-pointer hover:bg-gray-200 px-2">
               Vidyapeeth
@@ -61,6 +61,7 @@ function Navbar() {
         </div>
       </div>
     </div>
+  
   );
 }
 

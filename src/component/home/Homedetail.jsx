@@ -2,21 +2,20 @@ import React from "react";
 import heroimg from "../../assets/hero.webp";
 import { motion } from "motion/react";
 
-
 function Homedetail() {
   return (
     <div className="bg-gradient-to-b from-violet-200 to-pink-200  flex justify-center">
-      <div className="flex items-center max-w-[1200px]">
-        <div className="flex-1">
-          <div  className="flex flex-col gap-2">
-            <h1 className="text-4xl font-semibold">
+      <div className="lg:flex-row lg:items-center max-w-[1200px] flex flex-col items-center">
+        <div className="flex-1 flex flex-col items-center px-4 lg:flex-col lg:items-start">
+          <div className="flex flex-col lg:gap-2 items-center lg:flex-col lg:items-start">
+            <h1 className="lg:text-4xl text-center lg:text-start text-2xl font-semibold">
               Bharat's{" "}
               <span className="text-blue-600">
                 Trusted & <br /> Affordable{" "}
               </span>{" "}
-              <br /> Educational Platform
+              <br className="hidden lg:block" /> Educational Platform
             </h1>
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-center lg:text-start text-gray-700">
               Unlock your potential by signing up with Physics Wallah- <br />{" "}
               The most affordable learning solution
             </p>
