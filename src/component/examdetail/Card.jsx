@@ -3,7 +3,7 @@ import arrow from "../../assets/arrow.png";
 import { motion } from "framer-motion";
 import { exams } from "../../data";
 
-const cardVariants = {
+export const cardVariants = {
   initial: { y: 100 }, // left side se hidden
   visible: {
     y: 0,

@@ -2,7 +2,7 @@ import reect from "./assets/react.webp";
 import bank from "./assets/bank.webp";
 import hand from "./assets/hand.webp";
 import hand2 from "./assets/hand2.webp";
-
+import gate from "./assets/gate.png"
 export const courses = [
    {
     title: "Competitive Exams",
@@ -256,7 +256,7 @@ export const courses = [
  export const cities = [
   {
     title: "New Delhi",
-    image: reect,
+    image: gate,
   },
   {
     title: "New Delhi",

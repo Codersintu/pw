@@ -4,7 +4,7 @@ import Navbar from './component/navbar/Navbar'
 import Home from './component/home/Home'
 import Exam from './component/examdetail/Exam'
 import {motion,useScroll} from "motion/react"
-import Main from './Centerplace/Main'
+import Main from './component/Centerplace/Main'
 function App() {
  const {scrollYProgress}=useScroll()
 
