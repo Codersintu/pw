@@ -14,7 +14,7 @@ function Card() {
           </p>
         </div>
 
-        <div className="lg:grid lg:grid-cols-4 grid grid-cols-2 lg:mt-10 gap-5 w-[100vw] max-w-[1200px] p-10">
+        <div className="lg:grid lg:grid-cols-4 grid grid-cols-2 lg:mt-10 gap-5 w-[100vw] max-w-[1200px] lg:p-10 p-5">
           {cities.map((c, idx) => (
             <div
               key={idx}
