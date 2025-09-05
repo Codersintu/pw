@@ -6,11 +6,11 @@ import { motion } from "motion/react";
 function Navbar() {
   return (
     <div className="h-[80px] w-[100vw] z-[999] top-0 bg-white sticky flex justify-center shadow-2xs border-b border-gray-300">
-      <div className="max-w-[1300px] h-[100%]  flex justify-around items-center gap-10">
+      <div className="w-[100vw] max-w-[1300px] h-[100%]  flex justify-around items-center sm:gap-10 gap-15">
         {/* left side */}
         <div className="flex justify-center items-center gap-10">
           <div className="w-[50px] cursor-pointer">
-            <img className="w-[100%] object-cover max-w-[100%]" src={pwimg} alt="" />
+            <img className=" object-cover w-[100%]" src={pwimg} alt="" />
           </div>
 
           <div className="relative group hidden lg:flex">
@@ -55,7 +55,7 @@ function Navbar() {
           <motion.button initial={{ scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-           className="font-bold text-white bg-blue-800 py-3 px-8 rounded-sm cursor-pointer hover:bg-blue-600">
+           className="font-bold text-white bg-blue-800 py-3 sm:px-8 px-5  rounded-sm cursor-pointer hover:bg-blue-600">
             Login/Register
             </motion.button>
         </div>
