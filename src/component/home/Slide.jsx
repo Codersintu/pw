@@ -24,7 +24,7 @@ function Slide() {
   return (
     <div
       onMouseLeave={() => setActiveIndex(null)}
-      className="relative overflow-hidden max-w-[100%] z-0 flex justify-center items-center cursor-pointer"
+      className="relative overflow-hidden w-full z-0 flex justify-center items-center cursor-pointer"
     >
       <div
         onClick={() =>
@@ -32,12 +32,12 @@ function Slide() {
         }
         className={`absolute left-0  z-10 cursor-pointer ${
           activeIndex !== null ? "block" : "hidden"
-        } ${activeIndex !== null ? "bg-gray-400" : "hidden"}`}
+        } ${activeIndex !== null ? "bg-gray-300" : "hidden"}`}
       >
         <img src={leftarr} alt="" />
       </div>
       <div
-        className="flex max-w-[100%] relative z-0 transition-transform duration-1000"
+        className="flex  w-full relative z-0 transition-transform duration-1000"
         style={{
           transform: `translateX(-${currentidx * 100}%)`,
         }}
@@ -48,7 +48,7 @@ function Slide() {
             onMouseEnter={() => setActiveIndex(idx)}
             src={img}
             alt=""
-            className="max-w-[100%]"
+            className="w-full object-cover  h-[100px] lg:h-[300px]"
           />
         ))}
       </div>
@@ -59,7 +59,7 @@ function Slide() {
         }
         className={`absolute right-0 z-10 cursor-pointer ${
           activeIndex !== null ? "block" : "hidden"
-        } ${activeIndex !== null ? "bg-gray-400" : "hidden"}`}
+        } ${activeIndex !== null ? "bg-gray-300" : "hidden"}`}
       >
         <img src={rightarr} alt="" />
       </div>

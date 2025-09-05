@@ -5,6 +5,7 @@ import Home from './component/home/Home'
 import Exam from './component/examdetail/Exam'
 import {motion,useScroll} from "motion/react"
 import Main from './component/Centerplace/Main'
+import PrepInfo from './component/home/PrepInfo'
 function App() {
  const {scrollYProgress}=useScroll()
 
@@ -23,8 +24,8 @@ function App() {
                 }}/>
       <Navbar/>
       <Home/>
-      <Exam/>
-      <Main/>
+      {/* <Exam/> */}
+      {/* <Main/> */}
     </div>
   )
 }
