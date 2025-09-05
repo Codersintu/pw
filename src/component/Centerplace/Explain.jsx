@@ -6,10 +6,10 @@ function Explain() {
 
   return (
   
-    <motion.div className='w-[1200px] absolute top-2 flex flex-col justify-center'>
-     <motion.div initial={{y:100,opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.8}} className="flex flex-col justify-center items-center gap-6">
-        <h1 className='text-4xl text-blue-700 font-bold'>Explore Tech-Enabled Offline Vidyapeeth Centres</h1>
-       <p className='text-2xl text-pink-700 font-bold'>Creating new benchmarks in learning experiences</p>
+    <motion.div className='w-[100vw] max-w-[1200px] lg:absolute top-2 flex flex-col justify-center'>
+     <motion.div initial={{y:100,opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.8}} className="lg:flex lg:flex-col lg:justify-center hidden lg:items-center lg:gap-6">
+        <h1 className='lg:text-4xl text-xl text-center text-blue-700 font-bold'>Explore Tech-Enabled Offline Vidyapeeth Centres</h1>
+       <p className='lg:text-2xl text-xs text-pink-700 font-bold'>Creating new benchmarks in learning experiences</p>
      </motion.div>
      <motion.div initial={{y:100,opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.9,ease:"easeInOut"}}><Card/></motion.div>
     </motion.div>

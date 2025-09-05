@@ -25,7 +25,7 @@ function App() {
       <Navbar/>
       <Home/>
       <Exam/>
-      {/* <Main/> */}
+      <Main/>
     </div>
   )
 }

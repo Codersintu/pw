@@ -3,10 +3,10 @@ import { cities } from "../../data";
 import { motion } from "motion/react";
 function Card() {
   return (
-    <div className="shadow-2xl mt-20 rounded-xl bg-white max-w-full flex justify-center items-center">
-      <div className="flex flex-col items-center mt-7">
+    <div className="w-[100vw] max-w-[1200px] lg:shadow-2xl shadow-xs lg:mt-20 mt-5 rounded-xl bg-white flex justify-center">
+      <div className="flex flex-col items-center mt-7 mb-5">
         <div className="flex flex-col items-center gap-5">
-          <h1 className="text-4xl font-semibold">
+          <h1 className="lg:text-4xl text-xl font-semibold">
             Find Vidyapeeth Centre in your city
           </h1>
           <p className="text-2xl text-gray-600 font-semibold">
@@ -14,15 +14,15 @@ function Card() {
           </p>
         </div>
 
-        <div className="grid grid-cols-4 mt-10 gap-5">
+        <div className="lg:grid lg:grid-cols-4 grid grid-cols-2 lg:mt-10 gap-5 w-[100vw] max-w-[1200px] p-10">
           {cities.map((c, idx) => (
             <div
               key={idx}
               className="shadow-2xs cursor-pointer hover:border-gray-300 border border-gray-200 "
             >
-              <div className="flex px-15 py-6 items-center gap-4 ">
-                <motion.div whileHover={{scale:1.3}} transition={{duration:0.5}} className="max-w-[70px] border border-gray-200 rounded-md">
-                  <motion.img whileHover={{scale:1.1}} transition={{duration:0.5}}  className="max-w-[100%] overflow-hidden object-cover" src={c.image} alt="" />
+              <div className="flex items-center gap-4 ">
+                <motion.div whileHover={{scale:1.3}} transition={{duration:0.5}} className=" lg:w-[100vw] lg:max-w-[70px] max-w-[80px] rounded-md">
+                  <motion.img whileHover={{scale:1.1}} transition={{duration:0.5}}  className="lg:max-w-[100%] max-w-[80px] overflow-hidden object-cover" src={c.image} alt="" />
                 </motion.div>
                 <h1>{c.title}</h1>
               </div>
