@@ -21,22 +21,21 @@ function Card() {
 
   return (
     <React.Fragment>
-      <div className="flex flex-col items-center">
       <motion.div
         variants={cardVariants}
         initial="initial"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         onMouseLeave={() => setActiveidx(null)}
-        className="grid grid-cols-3 gap-5 "
+        className="lg:grid lg:grid-cols-3 flex flex-col gap-5"
       >
         {visibleExams.map((e, idx) => (
           <div
             key={idx}
             onMouseEnter={() => setActiveidx(idx)}
-            className="w-[400px] hover:border-black items-stretch flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+            className="w-[100vw] max-w-[400px] hover:border-black items-stretch flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
           >
-            <div className="flex-2 p-5">
+            <div className="flex-2 lg:p-5 p-6">
               <div className="flex flex-col gap-10">
                 <h1 className="text-2xl font-bold">{e.title}</h1>
                 {e.tags.length > 0 && (
@@ -70,7 +69,7 @@ function Card() {
                  transition: { duration: 0.2 }
                    }}
                   className={`${
-                    activeidx === idx ? "w-[110px]" : "w-[80px]"
+                    activeidx === idx ? "w-[100vw] max-w-[110px]" : "w-[100vw] max-w-[80px]"
                   } transition-all duration-300 `}
                   src={e.image}
                   alt=""
@@ -89,7 +88,6 @@ function Card() {
         )}
          
           </div>
-      </div>
     </React.Fragment>
   );
 }

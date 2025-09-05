@@ -53,7 +53,7 @@ const awardVariants = {
 function PrepInfo() {
   return (
     <div className="w-[100vw] flex justify-center items-center">
-      <div className="w-full max-w-[1200px] absolute lg:-bottom-44 -bottom-[300px] bg-white lg:p-10 p-5 shadow-2xl rounded-md">
+      <div className="w-full max-w-[1200px] absolute lg:-bottom-44 -bottom-[300px] bg-white lg:p-10 p-5 lg:shadow-2xl shadow-xs rounded-md">
         <div className="grid grid-cols-2 lg:flex lg:flex-row lg:justify-around w-full max-w-[1200px]">
           {detail.map((d, idx) => (
             <React.Fragment key={idx}>

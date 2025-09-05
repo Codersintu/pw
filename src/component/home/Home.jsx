@@ -5,7 +5,7 @@ import PrepInfo from "./PrepInfo";
 
 function Home() {
   return (
-    <div className="h-[calc(100vh - 80px)] relative w-[100vw]">
+    <div className=" relative w-[100vw]">
       <Slide />
       <Homedetail />
       <PrepInfo/>

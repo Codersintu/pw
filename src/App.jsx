@@ -24,7 +24,7 @@ function App() {
                 }}/>
       <Navbar/>
       <Home/>
-      {/* <Exam/> */}
+      <Exam/>
       {/* <Main/> */}
     </div>
   )
