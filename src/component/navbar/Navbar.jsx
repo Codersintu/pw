@@ -55,7 +55,7 @@ function Navbar() {
           <motion.button initial={{ scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-           className="font-bold text-white bg-blue-800 py-3 sm:px-8 px-5  rounded-sm cursor-pointer hover:bg-blue-600">
+           className="lg:font-bold font-semibold text-white text-xs bg-blue-800 py-3 sm:px-8 px-3  rounded-sm cursor-pointer hover:bg-blue-600">
             Login/Register
             </motion.button>
         </div>

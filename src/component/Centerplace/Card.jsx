@@ -3,7 +3,7 @@ import { cities } from "../../data";
 import { motion } from "motion/react";
 function Card() {
   return (
-    <div className="w-[100vw] max-w-[1200px] lg:shadow-2xl shadow-xs lg:mt-20 mt-5 rounded-xl bg-white flex justify-center">
+    <div className="w-[100vw] max-w-[1200px] lg:shadow-2xl shadow-xs lg:mt-80 mt-5 rounded-xl bg-white flex justify-center">
       <div className="flex flex-col items-center mt-7 mb-5">
         <div className="flex flex-col items-center gap-5">
           <h1 className="lg:text-4xl text-xl font-semibold">
