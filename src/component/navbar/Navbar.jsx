@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import pwimg from "../../assets/pw.png";
 import downarr from "../../assets/down.png";
+import hame from "../../assets/hame.png";
+import cancel from "../../assets/cancel.png";
 import Courses from "./Courses";
 import { motion } from "motion/react";
 function Navbar() {
+  const [open,setOpen]=useState(false)
   return (
+    <>
     <div className="h-[80px] w-[100vw] z-[999] top-0 bg-white sticky flex justify-center shadow-2xs border-b border-gray-300">
       <div className="w-[100vw] max-w-[1300px] h-[100%]  flex justify-around items-center sm:gap-10 gap-15">
         {/* left side */}
@@ -51,16 +55,66 @@ function Navbar() {
           </ul>
         </div>
         {/* right div */}
-        <div className="">
+        <div className="hidden lg:block">
           <motion.button initial={{ scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-           className="lg:font-bold font-semibold text-white text-xs bg-blue-800 py-3 sm:px-8 px-3  rounded-sm cursor-pointer hover:bg-blue-600">
+           className="lg:font-bold font-semibold text-white text-xs  bg-blue-800 sm:px-8 py-4 rounded-sm cursor-pointer hover:bg-blue-600">
             Login/Register
             </motion.button>
+        </div> 
+        {/* it is navber for mobile hambur menu after click then will open item of navbar */}
+        <div className="lg:hidden block" onClick={()=>setOpen(!open)}>
+          {open === true ?  <img src={cancel} alt="" /> :  <img src={hame} alt="" />}
+         
         </div>
+        
+       
       </div>
     </div>
+      {/* navbar item list for mobile */}
+        {open && (
+        <div className="w-[100vw] z-10 max-w-[100%] px-10 left-0  lg:hidden block">
+          <div className="flex flex-col justify-center gap-10 mb-2 mt-2">
+          <ul className="flex flex-col gap-8">
+            <li className="font-semibold cursor-pointer flex flex-col gap-4  px-2">
+              Vidyapeeth
+              <span className="border border-gray-300"></span>
+            </li>
+             
+            <li className="font-semibold  flex flex-col gap-4 px-2">
+              Upskilling
+              <span className="border border-gray-300"></span>
+            </li>
+            <li className="font-semibold flex flex-col gap-4  px-2">
+              PW Store(Books)
+              <span className="border border-gray-300"></span>
+            </li>
+            <li className="font-semibold flex flex-col gap-4  px-2">
+              Real Test
+              <span className="border border-gray-300"></span>
+            </li>
+            <li className="font-semibold flex flex-col gap-4  px-2">
+              Class 1st - 8th
+              <span className="border border-gray-300"></span>
+            </li>
+            <li className="font-semibold flex flex-col gap-4  px-2">
+              Power Batch
+              <span className="border border-gray-300"></span>
+            </li>
+          </ul>
+          <div className="">
+          <motion.button initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+           className="font-bold text-white text-xs  bg-blue-800 px-8 py-4 rounded-sm cursor-pointer hover:bg-blue-600">
+            Login/Register
+            </motion.button>
+        </div> 
+        </div>
+          </div>
+          )}
+          </>
   
   );
 }
